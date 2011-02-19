@@ -2,8 +2,6 @@
 $dirname = __DIR__;
 //Include all of the folders that need to be included to run the plugin.
 
-include_all_in_folder($dirname . '/app/helpers');
-
 spl_autoload_register('pdf_autoload', true, true);
 
 function pdf_autoload($class_name){
@@ -24,4 +22,6 @@ function pdf_autoload($class_name){
 }
 
 
-include($dirname . '/config/environment.php');
+//include($dirname . '/config/environment.php');
+
+Template::registerView('pdf', new net\mediaslave\pdf\lib\PdfView);

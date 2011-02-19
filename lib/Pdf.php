@@ -2,7 +2,7 @@
 
 namespace net\mediaslave\pdf\lib;
 
-//error_reporting(E_ERROR);
+error_reporting(E_ERROR);
 require_once(__DIR__ . '/html2ps/config.inc.php');
 require_once(HTML2PS_DIR.'pipeline.factory.class.php');
 
@@ -45,10 +45,10 @@ class Pdf{
 		  $baseurl = '';
 		  $media = \Media::predefined('Letter');
 		  $media->set_landscape(false);
-		  $media->set_margins(array('left'   => 10,
-		                            'right'  => 10,
-		                            'top'    => 10,
-		                            'bottom' => 10));
+		  $media->set_margins(array('left'   => 0,
+		                            'right'  => 0,
+		                            'top'    => 0,
+		                            'bottom' => 0));
 		  $media->set_pixels(1024); 
 
 		  global $g_config;
@@ -56,10 +56,11 @@ class Pdf{
 		                    'cssmedia'     => 'screen',
 		                    'scalepoints'  => '1',
 		                    'renderimages' => true,
-		                    'renderlinks'  => true,
-		                    'renderfields' => true,
+		                    'renderlinks'  => false,
+		                    'renderfields' => false,
 		                    'renderforms'  => false,
 		                    'mode'         => 'html',
+							'method'	   => 'fpdf',
 		                    'encoding'     => '',
 		                    'debugbox'     => false,
 		                    'pdfversion'    => '1.4',
