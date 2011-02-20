@@ -1,0 +1,3 @@
+[submodule "lib/html2ps"]
+	path = lib/html2ps
+	url = git@github.com:mediaslave/html2ps.git
