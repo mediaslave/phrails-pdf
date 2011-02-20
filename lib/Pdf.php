@@ -2,7 +2,7 @@
 
 namespace net\mediaslave\pdf\lib;
 
-error_reporting(E_ERROR);
+error_reporting(0);
 require_once(__DIR__ . '/html2ps/config.inc.php');
 require_once(HTML2PS_DIR.'pipeline.factory.class.php');
 
