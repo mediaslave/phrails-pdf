@@ -2,9 +2,9 @@
 
 namespace net\mediaslave\pdf\lib;
 
-error_reporting(0);
+error_reporting(E_ERROR);
 require_once(__DIR__ . '/html2ps/config.inc.php');
-require_once(HTML2PS_DIR.'pipeline.factory.class.php');
+require_once(HTML2PS_DIR . 'pipeline.factory.class.php');
 
 require_once('MemoryDestination.php');
 require_once('MemoryFetcher.php');
