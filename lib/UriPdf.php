@@ -6,8 +6,8 @@ error_reporting(E_ERROR);
 require_once(__DIR__ . '/html2ps/config.inc.php');
 require_once(HTML2PS_DIR . 'pipeline.factory.class.php');
 
+require_once(HTML2PS_DIR.'fetcher.url.class.php');
 require_once('MemoryDestination.php');
-require_once('MemoryFetcher.php');
 
 @set_time_limit(0);
 parse_config_file(HTML2PS_DIR.'html2ps.config');
@@ -15,7 +15,7 @@ parse_config_file(HTML2PS_DIR.'html2ps.config');
 
 
 
-class Pdf{
+class UriPdf{
 	
 	private $html;
 	
@@ -37,7 +37,7 @@ class Pdf{
 		  // Override HTML source 
 		  // @TODO: default http fetcher will return null on incorrect images 
 		  // Bug submitted by 'imatronix' (tufat.com forum).
-		  $pipeline->fetchers[] = new MemoryFetcher($this->html, '');
+		  $pipeline->fetchers[] = new \FetcherURL();
 
 		  // Override destination to local file
 		  $pipeline->destination = new MemoryDestination('');
@@ -68,7 +68,7 @@ class Pdf{
 		                    );
 
 		  $pipeline->configure($g_config);
-		  $pipeline->process_batch(array($baseurl), $media);
+		  $pipeline->process($this->html, $media);
 		return $pipeline->output;
 	}
 	
