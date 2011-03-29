@@ -55,14 +55,14 @@ class Pdf{
 		  $g_config = array(
 		                    'cssmedia'     => 'screen',
 		                    'scalepoints'  => '1',
-		                    'renderimages' => true,
+		                    'renderimages' => 'true',
 		                    'renderlinks'  => false,
 		                    'renderfields' => false,
 		                    'renderforms'  => false,
 		                    'mode'         => 'html',
 							'method'	   => 'fpdf',
 		                    'encoding'     => '',
-		                    'debugbox'     => false,
+		                    'debugbox'     => true,
 		                    'pdfversion'    => '1.4',
 		                    'draw_page_border' => false
 		                    );
