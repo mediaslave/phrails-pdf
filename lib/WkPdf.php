@@ -31,7 +31,7 @@ class WkPdf
 	public function process(){
 		//put the file contents into the temp directory
 		mt_srand(time());
-		$path = '/tmp/' . sha1(microtime() . mt_rand()) . '.application';
+		$path = '/tmp/' . sha1(microtime() . mt_rand());
 		//Save the file to tmp
 		file_put_contents($path . '.html', $this->html);
 
