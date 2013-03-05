@@ -37,7 +37,11 @@ class WkPdf
 
 		$this->args['out'] = $path . '.pdf';
 		//Convert it.
-		$converted = wkhtmltox_convert('pdf', $this->args, array(array('page' => $path . '.html')));
-		return file_get_contents($this->args['out']);
+		//$converted = wkhtmltox_convert('pdf', $this->args, array(array('page' => $path . '.html')));
+		$command = "wkhtmltopdf --image-quality 100 --margin-top '.5cm' --margin-right '.5cm' --margin-bottom '.5cm' --margin-left '.5cm' $path.html $path.pdf";
+
+		$command = escapeshellcmd($command);
+		`$command`;
+		return file_get_contents("$path.pdf");
 	}
 }

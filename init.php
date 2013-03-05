@@ -23,8 +23,4 @@ function pdf_autoload($class_name){
 
 
 //include($dirname . '/config/environment.php');
-if(function_exists('wkhtmltox_convert')){
-	Template::registerView('pdf', new net\mediaslave\pdf\lib\WkPdfView);
-}else{
-	Template::registerView('pdf', new net\mediaslave\pdf\lib\PdfView);
-}
+Template::registerView('pdf', new net\mediaslave\pdf\lib\WkPdfView);
