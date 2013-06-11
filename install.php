@@ -1,2 +1,2 @@
-<?
+<?php
 //Use this to install any initializers, ini's, etc...

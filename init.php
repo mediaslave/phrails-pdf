@@ -1,4 +1,4 @@
-<?
+<?php
 $dirname = __DIR__;
 //Include all of the folders that need to be included to run the plugin.
 
