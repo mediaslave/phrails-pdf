@@ -28,7 +28,7 @@ class WkPdf
 	 * @return void
 	 * @author Justin Palmer
 	 **/
-	public function process(){
+	public function process($return_file=true){
 		//put the file contents into the temp directory
 		mt_srand(time());
 		$path = '/tmp/' . sha1(microtime() . mt_rand()) . '.wkpdf';
@@ -42,6 +42,9 @@ class WkPdf
 
 		$command = escapeshellcmd($command);
 		`$command`;
-		return file_get_contents("$path.pdf");
+    if($return_file) {
+		  return file_get_contents("$path.pdf");
+    }
+    return "$path.pdf";
 	}
 }
